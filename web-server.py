@@ -6,11 +6,22 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         self.send_response(200)
+        self.send_header('Content-type', 'text-html')
         self.end_headers()
         message =  threading.currentThread().getName()
-        self.wfile.write(message)
-        self.wfile.write('\n')
-        return
+        html = """
+            <html>
+            <head>
+            <title>Dummy HTML</title>
+            </head>
+            <body>
+            <h1>Kode Fun is Awesome</h1>
+            <h1>{message}</h1>
+            </body>
+            </html>
+            """ 
+        self.wfile.write(html.format(message=message))
+        f.close()
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     """Handle requests in a separate thread."""
