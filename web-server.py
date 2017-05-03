@@ -12,6 +12,7 @@ class Handler(BaseHTTPRequestHandler):
         html = """
             <html>
             <head>
+            <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
             <title>Dummy HTML</title>
             </head>
             <body>
@@ -21,7 +22,6 @@ class Handler(BaseHTTPRequestHandler):
             </html>
             """ 
         self.wfile.write(html.format(message=message))
-        f.close()
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     """Handle requests in a separate thread."""
