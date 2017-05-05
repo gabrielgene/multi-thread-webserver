@@ -13,11 +13,25 @@ class Handler(BaseHTTPRequestHandler):
             <html>
             <head>
             <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
-            <title>Dummy HTML</title>
+            <title>Multi-Thread WebServer</title>
             </head>
-            <body>
-            <h1>Kode Fun is Awesome</h1>
-            <h1>{message}</h1>
+            <body style="
+                background: #2d2d2d;
+            ">
+            <h1 style="
+                color: #00d8ea;
+                position: relative;
+                text-align: center;
+                font-size: 45px;
+                top: 20px;
+            ">Multi-Thread WebServer</h1>
+            <h1 style="
+                color: #00d8ea;
+                position: relative;
+                text-align: center;
+                font-size: 45px;
+                top: 20px;
+            ">{message}</h1>
             </body>
             </html>
             """ 
